@@ -17,13 +17,13 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-[#0d0d0d]/90 backdrop-blur-md border-b border-[#c9a84c22]">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold gold-gradient">mB</span>
-          <span className="text-sm text-gray-400 hidden sm:block">INSIEMEANTOBE</span>
+          <span className="text-lg sm:text-xl font-bold gold-gradient">mB</span>
+          <span className="text-xs sm:text-sm text-gray-400 hidden sm:block">INSIEMEANTOBE</span>
         </Link>
 
-        <div className="hidden md:flex gap-8">
+        <div className="hidden md:flex gap-6 lg:gap-8">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -40,15 +40,15 @@ export default function Navbar() {
         </div>
 
         <button
-          className="md:hidden text-gray-400 hover:text-white"
+          className="md:hidden text-gray-400 hover:text-white p-1"
           onClick={() => setOpen(!open)}
         >
-          {open ? <X size={22} /> : <Menu size={22} />}
+          {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden bg-[#111] border-t border-[#c9a84c22] px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-[#111] border-t border-[#c9a84c22] px-4 sm:px-6 py-4 flex flex-col gap-4">
           {links.map((l) => (
             <Link
               key={l.href}
