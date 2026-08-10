@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0d0d0d;
+  --foreground: #f0f0f0;
+  --accent: #c9a84c;
+  --accent-light: #e8c96a;
 }
 
 @theme inline {
@@ -12,15 +14,40 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+p, h1, h2, h3 {
+  color: #ffffff;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.85);
+}
+
+.text-gray-400 {
+  color: #e5e7eb !important;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.85);
+}
+
+.text-gray-500 {
+  color: #d1d5db !important;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.85);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #c9a84c, #e8c96a, #c9a84c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+.gold-border {
+  border: 1px solid #c9a84c44;
+}
+
+.card-bg {
+  background: rgba(26, 26, 26, 0.4);
+  backdrop-filter: blur(8px);
 }
