@@ -1,5 +1,6 @@
 interface TeamCardProps {
   name: string;
+  nickname?: string;
   role: string;
   image?: string;
   highlight?: boolean;
@@ -8,7 +9,7 @@ interface TeamCardProps {
   objectPosition?: string;
 }
 
-export default function TeamCard({ name, role, image, highlight, zoom, zoomClass, objectPosition }: TeamCardProps) {
+export default function TeamCard({ name, nickname, role, image, highlight, zoom, zoomClass, objectPosition }: TeamCardProps) {
   if (image) {
     return (
       <div
@@ -18,11 +19,14 @@ export default function TeamCard({ name, role, image, highlight, zoom, zoomClass
       >
         <img src={image} alt={name} className={`w-full h-full object-cover ${zoomClass ?? (zoom ? "scale-110" : "")}`} style={{ objectPosition: objectPosition ?? "center top" }} />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+        {highlight && (
+          <div className="absolute top-0 left-0 right-0 p-2 sm:p-3 text-center">
+            <p className="text-[#c9a84c] font-semibold text-[10px] sm:text-xs">{role}</p>
+          </div>
+        )}
         <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3 text-center">
-          <p className="font-semibold text-white text-xs sm:text-sm">{name}</p>
-          <p className={`text-[10px] sm:text-xs mt-0.5 ${highlight ? "text-[#c9a84c] font-semibold" : "text-gray-300"}`}>
-            {role}
-          </p>
+          <p className="font-semibold text-white text-xs sm:text-sm">{nickname ?? name}</p>
+          <p className="text-gray-300 text-[9px] sm:text-[10px] mt-0.5">{name}</p>
         </div>
       </div>
     );
@@ -38,7 +42,7 @@ export default function TeamCard({ name, role, image, highlight, zoom, zoomClass
         <span className="text-xl sm:text-2xl font-bold gold-gradient">{name[0]}</span>
       </div>
       <div className="text-center px-2">
-        <p className="font-semibold text-white text-xs sm:text-sm">{name}</p>
+        <p className="font-semibold text-white text-xs sm:text-sm">{nickname ?? name}</p>
         <p className={`text-[10px] sm:text-xs mt-0.5 ${highlight ? "text-[#c9a84c] font-semibold" : "text-gray-400"}`}>
           {role}
         </p>

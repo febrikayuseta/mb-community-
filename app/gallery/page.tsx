@@ -1,16 +1,16 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Image from "next/image";
+import PageBackground from "@/components/PageBackground";
 import { useState, useEffect, useRef, useCallback } from "react";
 
 const albums = [
   { title: "BUKBER 2026", cover: "/BUKBER (1).png", photos: ["/BUKBER (1).png", "/BUKBER (2).png"] },
   { title: "CIMORY - Bogor", cover: "/CIMORY BOGOR (1).jpg", photos: ["/CIMORY BOGOR (1).jpg", "/CIMORY BOGOR (2).jpg"] },
-  { title: "Birthday mB", cover: "/BIRTHDAY (1).jpg", photos: ["/BIRTHDAY (1).jpg", "/BIRTHDAY (2).jpg"] },
+  { title: "Birthday mB", cover: "/BIRTHDAY (1).jpg", photos: ["/BIRTHDAY (1).jpg", "/BIRTHDAY (2).jpg", "/BIRTHDAY (3).jpeg"] },
   { title: "Central Park", cover: "/CENTRAL PARK (1).jpg", photos: ["/CENTRAL PARK (1).jpg", "/CENTRAL PARK (2).jpg"] },
-  { title: "Snowville", cover: "/SNOWVILLE (2).jpg", photos: ["/SNOWVILLE (1.jpg", "/SNOWVILLE (2).jpg", "/SNOWVILLE (4).jpg", "/SNOWVILLE (5).jpg"] },
-  { title: "PHOTOBOOTH EDITION", cover: "/PHOTOBOOTH (1).jpg", photos: ["/PHOTOBOOTH (1).jpg", "/PHOTOBOOTH (2).jpg", "/PHOTOBOOTH (3).jpg", "/PHOTOBOOTH (4).jpg", "/PHOTOBOOTH (5).jpg", "/PHOTOBOOTH (6).jpg", "/PHOTOBOOTH (7).jpg"] },
+  { title: "Snowville", cover: "/SNOWVILLE (2).jpg", photos: ["/SNOWVILLE (1.jpg", "/SNOWVILLE (2).jpg", "/SNOWVILLE (3).jpeg", "/SNOWVILLE (4).jpg", "/SNOWVILLE (5).jpg"] },
+  { title: "PHOTOBOOTH EDITION", cover: "/PHOTOBOOTH (1).jpg", photos: ["/PHOTOBOOTH (1).jpg", "/PHOTOBOOTH (2).jpg", "/PHOTOBOOTH (3).jpg", "/PHOTOBOOTH (4).jpg", "/PHOTOBOOTH (5).jpg", "/PHOTOBOOTH (6).jpg", "/PHOTOBOOTH (7).jpg", "/PHOTOBOOTH (8).jpg"] },
 ];
 
 type Album = typeof albums[0];
@@ -157,10 +157,7 @@ export default function GalleryPage() {
   return (
     <>
       <Navbar />
-      <div className="fixed inset-0 -z-10">
-        <Image src="/Cover NoChara.png" alt="background" fill className="object-cover" />
-        <div className="absolute inset-0 bg-black/65" />
-      </div>
+      <PageBackground />
 
       {openAlbum && <AlbumModal album={openAlbum} onClose={() => setOpenAlbum(null)} />}
 

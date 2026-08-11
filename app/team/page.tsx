@@ -2,27 +2,27 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TeamCard from "@/components/TeamCard";
-import Image from "next/image";
+import PageBackground from "@/components/PageBackground";
 import { useState, useEffect, useRef, useCallback } from "react";
 
 const team = {
   founders: [
-    { name: "Sherly", role: "Co-Founder", image: "/sherly.jpeg" },
-    { name: "Fiefy", role: "Co-Founder", image: "/fiefy.jpeg" },
+    { name: "Sherly", nickname: "YUME-mB", role: "Co-Founder", image: "/sherly.jpeg" },
+    { name: "Fiefy", nickname: "bebyelle-mB", role: "Co-Founder", image: "/fiefy.jpeg" },
   ],
   leadership: [
-    { name: "Selvi", role: "Leader", image: "/Selvi.jpeg" },
-    { name: "Vero Zhang", role: "Vice Leader", image: "/Veroo.jpeg" },
+    { name: "Selvi", nickname: "SVXLEmB", role: "Leader", image: "/Selvi.jpeg" },
+    { name: "Vero Zhang", nickname: "mBxella-TD", role: "Vice Leader", image: "/Veroo.jpeg" },
   ],
   staff: [
-    { name: "Tine", role: "Staff", image: "/Tine.jpeg" },
-    { name: "Aida", role: "Staff", image: "/Aida.jpeg" },
-    { name: "Vikki", role: "Staff", image: "/Vikki.jpeg" },
-    { name: "Aceng", role: "Staff", image: "/Aceng.jpeg" },
+    { name: "Tine", nickname: "kirara-mB", role: "Staff", image: "/Tine.jpeg" },
+    { name: "Aida", nickname: "sparkles-mB", role: "Staff", image: "/Aida.jpeg" },
+    { name: "Vikki", nickname: "mBvicii-yX", role: "Staff", image: "/Vikki.jpeg" },
+    { name: "Aceng", nickname: "asLucas-mB", role: "Staff", image: "/Aceng.jpeg" },
   ],
 };
 
-type Member = { name: string; role: string; image?: string };
+type Member = { name: string; nickname?: string; role: string; image?: string };
 
 function PairCarousel({ members, highlight }: { members: Member[]; highlight?: boolean }) {
   const pageCount = Math.ceil(members.length / 2);
@@ -89,6 +89,7 @@ function PairCarousel({ members, highlight }: { members: Member[]; highlight?: b
               >
                 <TeamCard
                   name={m.name}
+                  nickname={m.nickname}
                   role={m.role}
                   image={m.image}
                   highlight={highlight}
@@ -129,7 +130,8 @@ function PairCarousel({ members, highlight }: { members: Member[]; highlight?: b
             <img src={openMember.image} alt={openMember.name} className="w-full rounded-2xl object-cover shadow-2xl" />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent rounded-b-2xl px-4 py-3 sm:px-5 sm:py-4">
               <p className="text-white font-bold text-base sm:text-lg">{openMember.name}</p>
-              <p className="text-[#c9a84c] text-xs sm:text-sm">{openMember.role}</p>
+              {openMember.nickname && <p className="text-[#c9a84c] text-xs sm:text-sm">{openMember.nickname}</p>}
+              <p className="text-gray-300 text-xs sm:text-sm">{openMember.role}</p>
             </div>
             <button
               onClick={() => { setOpenMember(null); setPaused(false); }}
@@ -148,10 +150,7 @@ export default function TeamPage() {
   return (
     <>
       <Navbar />
-      <div className="fixed inset-0 -z-10">
-        <Image src="/Cover NoChara.png" alt="background" fill className="object-cover" />
-        <div className="absolute inset-0 bg-black/60" />
-      </div>
+      <PageBackground />
       <main className="max-w-5xl mx-auto px-4 sm:px-6 pt-24 sm:pt-32 pb-16 sm:pb-24">
 
         <div className="text-center mb-10 sm:mb-16">

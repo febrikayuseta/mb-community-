@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   description: "Official website of INSIEMEANTOBE COMMUNITY (mB)",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html

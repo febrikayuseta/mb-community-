@@ -1,15 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
+import PageBackground from "@/components/PageBackground";
 
 export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <div className="fixed inset-0 -z-10">
-        <Image src="/Cover NoChara.png" alt="background" fill className="object-cover" />
-        <div className="absolute inset-0 bg-black/60" />
-      </div>
-      <main className="h-[100dvh] overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6 gap-3 sm:gap-5 pt-12">
+      <PageBackground />
+      <main className="flex flex-col items-center px-4 sm:px-6 gap-5 sm:gap-7 pt-24 sm:pt-32 pb-16">
 
         {/* Header */}
         <div className="text-center">
@@ -22,13 +20,13 @@ export default function AboutPage() {
 
         {/* About Text */}
         <div className="card-bg gold-border rounded-2xl p-3 sm:p-6 max-w-2xl w-full">
-          <p className="text-gray-300 leading-relaxed text-[11px] sm:text-sm">
+          <p className="text-gray-300 leading-relaxed text-[11px] sm:text-sm text-justify">
             <span className="font-bold text-white">INSIEMEANTOBE Community (mB)</span> merupakan gabungan dua club, INSIEME dan MeantToBe, yang dipertemukan melalui mabar hingga akhirnya menjadi satu komunitas yang hangat dan solid.
           </p>
-          <p className="text-gray-300 leading-relaxed text-[11px] sm:text-sm mt-2 sm:mt-3">
+          <p className="text-gray-300 leading-relaxed text-[11px] sm:text-sm mt-2 sm:mt-3 text-justify">
             Resmi berdiri pada 3 Januari 2026, mB kini beranggotakan 32 orang dari berbagai daerah di Indonesia. Nama INSIEMEANTOBE memiliki makna <span className="font-bold text-white">&quot;Together, Meant To Be&quot;</span> — bersama karena memang sudah ditakdirkan.
           </p>
-          <p className="text-gray-300 leading-relaxed text-[11px] sm:text-sm mt-2 sm:mt-3">
+          <p className="text-gray-300 leading-relaxed text-[11px] sm:text-sm mt-2 sm:mt-3 text-justify">
             Dari sebuah kolaborasi sederhana, kami tumbuh menjadi komunitas yang dibangun atas kebersamaan, persahabatan, dan kekompakan, dengan dukungan para founder, leader, dan staff yang berperan sejak awal.
           </p>
         </div>
@@ -46,7 +44,7 @@ export default function AboutPage() {
             <div className="text-[#c9a84c] text-lg sm:text-2xl">×</div>
             <div className="flex flex-col items-center gap-1 sm:gap-2">
               <div className="w-12 h-12 sm:w-20 sm:h-20 rounded-full bg-[#1a1a1a] gold-border relative overflow-hidden">
-                <Image src="/logo-komunitas2.png" alt="MeantToBe" fill className="object-cover scale-125" />
+                <Image src="/logo-komunitas2.jpeg" alt="MeantToBe" fill className="object-cover scale-110" />
               </div>
               <p className="text-gray-400 text-[10px] sm:text-sm">MeantToBe</p>
             </div>
