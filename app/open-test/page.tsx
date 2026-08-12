@@ -81,8 +81,8 @@ export default function OpenTestPage() {
               <div key={r.num} className="card-bg gold-border rounded-xl p-3 sm:p-4 flex gap-3 sm:gap-4 items-start">
                 <span className="text-[#c9a84c] font-black text-sm sm:text-base min-w-[28px]">{r.num}</span>
                 <div>
-                  <p className="text-white font-semibold text-xs sm:text-sm">{r.title}</p>
-                  <p className="text-gray-400 text-[11px] sm:text-xs mt-0.5 leading-relaxed">{r.desc}</p>
+                  <p className="text-white font-semibold text-sm sm:text-base">{r.title}</p>
+                  <p className="text-gray-400 text-xs sm:text-sm mt-0.5 leading-relaxed text-justify">{r.desc}</p>
                 </div>
               </div>
             ))}
@@ -92,7 +92,7 @@ export default function OpenTestPage() {
         {/* Sanksi */}
         <div className="card-bg border border-red-500/30 rounded-2xl p-4 sm:p-6">
           <h2 className="text-base sm:text-lg font-black text-red-400 mb-2 text-center">SANKSI</h2>
-          <p className="text-gray-300 text-xs sm:text-sm leading-relaxed text-center">
+          <p className="text-gray-300 text-sm sm:text-base leading-relaxed text-justify">
             Jika terbukti melanggar salah satu rules yang berlaku, maka member akan dikeluarkan langsung secara tidak hormat dari community.
           </p>
         </div>

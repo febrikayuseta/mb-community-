@@ -37,7 +37,7 @@ const members: {
     { name: "Eric",     nickname: "mBRick-nLv",        photo: "/members/Eric.jpeg" },
     { name: "Indra",    nickname: "YunB-mB",           photo: "/members/Indra.webp" },
     { name: "Isal",     nickname: "RexXmB-REN",        photo: "/members/Isal.jpeg" },
-    { name: "Iskandar", nickname: null,                photo: "/members/Iskandar.jpg" },
+    { name: "Iskandar", nickname: "summer-mB",          photo: "/members/Iskandar.jpg" },
     { name: "Jordi",    nickname: "sinner-mB",         photo: "/members/Jordi.jpeg" },
     { name: "Khrisna",  nickname: "5sMerl-mB",         photo: "/members/Khrisna.png" },
     { name: "Marcel",   nickname: "wine-mB",           photo: "/members/Marcel.jpeg" },
@@ -118,11 +118,11 @@ function MemberCarousel({ members, gender }: { members: MemberType[]; gender: "F
         >‹</button>
 
         {/* Cards */}
-        <div style={slideStyle} className="flex gap-3 sm:gap-4 md:gap-5 justify-center px-10 sm:px-12">
+        <div style={slideStyle} className="flex gap-3 sm:gap-4 md:gap-5 justify-center px-8 sm:px-12">
           {group.map((m) => (
             <div
               key={m.name}
-              className="relative w-32 h-48 sm:w-36 sm:h-52 md:w-44 md:h-64 rounded-2xl overflow-hidden gold-border cursor-pointer hover:-translate-y-1 transition-transform flex-shrink-0"
+              className="relative w-36 h-52 sm:w-52 sm:h-72 md:w-60 md:h-80 rounded-2xl overflow-hidden gold-border cursor-pointer hover:-translate-y-1 transition-transform flex-shrink-0"
               onClick={() => m.photo && setOpenMember(m)}
             >
               {m.photo ? (
@@ -134,7 +134,7 @@ function MemberCarousel({ members, gender }: { members: MemberType[]; gender: "F
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-2 text-center">
-                <p className="text-white font-semibold text-[10px] sm:text-xs leading-tight">{m.nickname ?? m.name}</p>
+                <p className="text-white font-semibold text-[10px] sm:text-xs leading-tight truncate w-full">{m.nickname ?? m.name}</p>
                 {m.nickname && <p className="text-gray-300 text-[9px] sm:text-[10px] mt-0.5">{m.name}</p>}
               </div>
             </div>
@@ -185,7 +185,7 @@ function MemberCarousel({ members, gender }: { members: MemberType[]; gender: "F
 function SearchCard({ m, gender, onClick }: { m: MemberType; gender: "F" | "M"; onClick: (m: MemberType) => void }) {
   return (
     <div
-      className="relative w-28 h-40 sm:w-36 sm:h-52 md:w-44 md:h-64 rounded-2xl overflow-hidden gold-border cursor-pointer hover:-translate-y-1 transition-transform flex-shrink-0"
+      className="relative w-40 h-56 sm:w-52 sm:h-72 md:w-60 md:h-80 rounded-2xl overflow-hidden gold-border cursor-pointer hover:-translate-y-1 transition-transform flex-shrink-0"
       onClick={() => m.photo && onClick(m)}
     >
       {m.photo ? (
@@ -197,7 +197,7 @@ function SearchCard({ m, gender, onClick }: { m: MemberType; gender: "F" | "M"; 
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 p-2 text-center">
-        <p className="text-white font-semibold text-[10px] sm:text-xs leading-tight">{m.nickname ?? m.name}</p>
+        <p className="text-white font-semibold text-[10px] sm:text-xs leading-tight truncate w-full">{m.nickname ?? m.name}</p>
         {m.nickname && <p className="text-gray-300 text-[9px] sm:text-[10px] mt-0.5">{m.name}</p>}
       </div>
     </div>
@@ -279,8 +279,8 @@ export default function MembersPage() {
             {/* Carousel */}
             <div className="flex-1 flex flex-col justify-center">
               {tab === "F"
-                ? <MemberCarousel members={members.female} gender="F" />
-                : <MemberCarousel members={members.male} gender="M" />
+                ? <MemberCarousel key="F" members={members.female} gender="F" />
+                : <MemberCarousel key="M" members={members.male} gender="M" />
               }
             </div>
           </>

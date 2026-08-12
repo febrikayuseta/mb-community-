@@ -13,7 +13,7 @@ export default function TeamCard({ name, nickname, role, image, highlight, zoom,
   if (image) {
     return (
       <div
-        className={`relative w-32 h-44 sm:w-44 sm:h-60 md:w-52 md:h-72 rounded-2xl overflow-hidden gold-border transition-transform hover:-translate-y-1 ${
+        className={`relative w-36 h-52 sm:w-40 sm:h-56 md:w-44 md:h-60 rounded-2xl overflow-hidden gold-border transition-transform hover:-translate-y-1 ${
           highlight ? "ring-1 ring-[#c9a84c]" : ""
         }`}
       >

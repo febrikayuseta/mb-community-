@@ -24,7 +24,7 @@ export default function AboutPage() {
             <span className="font-bold text-white">INSIEMEANTOBE Community (mB)</span> merupakan gabungan dua club, INSIEME dan MeantToBe, yang dipertemukan melalui mabar hingga akhirnya menjadi satu komunitas yang hangat dan solid.
           </p>
           <p className="text-gray-300 leading-relaxed text-[11px] sm:text-sm mt-2 sm:mt-3 text-justify">
-            Resmi berdiri pada 3 Januari 2026, mB kini beranggotakan 32 orang dari berbagai daerah di Indonesia. Nama INSIEMEANTOBE memiliki makna <span className="font-bold text-white">&quot;Together, Meant To Be&quot;</span> — bersama karena memang sudah ditakdirkan.
+            Resmi berdiri pada 3 Januari 2026, mB kini beranggotakan 30+ orang dari berbagai daerah di Indonesia. Nama INSIEMEANTOBE memiliki makna <span className="font-bold text-white">&quot;Together, Meant To Be&quot;</span> — bersama karena memang sudah ditakdirkan.
           </p>
           <p className="text-gray-300 leading-relaxed text-[11px] sm:text-sm mt-2 sm:mt-3 text-justify">
             Dari sebuah kolaborasi sederhana, kami tumbuh menjadi komunitas yang dibangun atas kebersamaan, persahabatan, dan kekompakan, dengan dukungan para founder, leader, dan staff yang berperan sejak awal.

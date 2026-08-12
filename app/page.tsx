@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 import PageBackground from "@/components/PageBackground";
+import VideoCarousel from "@/components/VideoCarousel";
 
 export default function Home() {
   return (
@@ -12,14 +13,17 @@ export default function Home() {
 
       <main className="flex flex-col">
         {/* Hero */}
-        <section className="flex flex-col items-center text-center px-4 sm:px-6 relative pt-24 sm:pt-32 pb-8 gap-5 sm:gap-7">
+        <section className="flex flex-col items-center text-center px-4 sm:px-6 relative pt-16 sm:pt-24 pb-6 gap-3 sm:gap-5">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#c9a84c15_0%,_transparent_70%)] pointer-events-none" />
 
-          <div>
-            <h1 className="text-2xl sm:text-4xl lg:text-6xl font-black tracking-tight mb-1">
-              <span className="gold-gradient">INSIEMEANTOBE</span>
-            </h1>
-            <p className="text-gray-400 tracking-widest uppercase text-xs sm:text-sm">Community</p>
+          <div className="flex flex-col items-center gap-2 sm:gap-3">
+            <Image src="/Ayodance-logo.png" alt="Ayodance" width={80} height={80} className="sm:w-[120px] sm:h-[120px] object-contain" />
+            <div>
+              <h1 className="text-2xl sm:text-4xl lg:text-6xl font-black tracking-tight mb-1">
+                <span className="gold-gradient">INSIEMEANTOBE</span>
+              </h1>
+              <p className="text-gray-400 tracking-widest uppercase text-xs sm:text-sm">Community</p>
+            </div>
           </div>
 
           <p className="text-gray-300 max-w-lg leading-relaxed text-xs sm:text-sm md:text-base px-2 italic">
@@ -88,6 +92,8 @@ export default function Home() {
               ))}
             </div>
           </div>
+
+          <VideoCarousel />
         </div>
 
         <Footer />

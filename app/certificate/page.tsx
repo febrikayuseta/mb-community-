@@ -62,6 +62,23 @@ const albums = [
       "/certificate/COTM-Selfie (5).png",
     ],
   },
+  {
+    title: "mB Petarunk",
+    portrait: true,
+    cover: "/certificate/mB Petarunk (0).png",
+    photos: [
+      "/certificate/mB Petarunk (0).png",
+      "/certificate/mB Petarunk (1).png",
+      "/certificate/mB Petarunk (2).png",
+      "/certificate/mB Petarunk (3).png",
+      "/certificate/mB Petarunk (4).png",
+      "/certificate/mB Petarunk (5).png",
+      "/certificate/mB Petarunk (6).png",
+      "/certificate/mB Petarunk (7).png",
+      "/certificate/mB Petarunk (8).png",
+      "/certificate/mB Petarunk (9).png",
+    ],
+  },
 ];
 
 type Album = typeof albums[0];
@@ -185,9 +202,9 @@ export default function CertificatePage() {
           <p className="text-gray-400 mt-2 text-sm italic">ᴛᴏɢᴇᴛʜᴇʀ ᴡᴇ ꜱᴛᴀɴᴅ, ʙᴇᴄᴀᴜꜱᴇ ᴡᴇ&apos;ʀᴇ ᴍᴇᴀɴᴛ ᴛᴏ ʙᴇ</p>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-2xl md:max-w-4xl mx-auto">
           {albums.map((album) => (
-            <div key={album.title} className={album.portrait ? "col-span-2 max-w-xs mx-auto w-full" : ""}>
+            <div key={album.title}>
               <AlbumCover album={album} onClick={() => setOpenAlbum(album)} />
             </div>
           ))}
