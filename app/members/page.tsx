@@ -121,7 +121,7 @@ function MemberCarousel({ members, gender }: { members: MemberType[]; gender: "F
           {group.map((m) => (
             <div
               key={m.name}
-              className="relative w-36 h-52 sm:w-40 sm:h-56 md:w-44 md:h-60 rounded-2xl overflow-hidden gold-border cursor-pointer hover:-translate-y-1 transition-transform"
+              className="relative w-36 h-52 md:w-44 md:h-60 rounded-2xl overflow-hidden gold-border cursor-pointer hover:-translate-y-1 transition-transform"
               onClick={() => m.photo && setOpenMember(m)}
             >
               {m.photo ? (
