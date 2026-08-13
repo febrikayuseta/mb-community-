@@ -224,7 +224,7 @@ export default function MembersPage() {
       <Navbar />
       <PageBackground />
 
-      <main className="flex flex-col max-w-4xl md:max-w-5xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-10">
+      <main className="max-w-4xl md:max-w-5xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-10">
 
         {/* Header */}
         <div className="text-center py-4 sm:py-6 flex-shrink-0">
@@ -276,7 +276,7 @@ export default function MembersPage() {
             </div>
 
             {/* Carousel */}
-            <div className="flex-1 flex flex-col justify-center">
+            <div className="flex flex-col justify-center">
               {tab === "F"
                 ? <MemberCarousel key="F" members={members.female} gender="F" />
                 : <MemberCarousel key="M" members={members.male} gender="M" />
