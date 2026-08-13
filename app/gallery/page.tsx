@@ -5,7 +5,7 @@ import PageBackground from "@/components/PageBackground";
 import { useState, useEffect, useRef, useCallback } from "react";
 
 const offlineAlbums = [
-  { title: "BUKBER 2026", cover: "/offline/BUKBER (1).png", photos: ["/offline/BUKBER (1).png", "/offline/BUKBER (2).png"] },
+  { title: "BUKBER 2026", cover: "/offline/BUKBER (1).png", photos: ["/offline/BUKBER (1).png", "/offline/BUKBER (2).png", "/offline/BUKBER (3).png"] },
   { title: "CIMORY - Bogor", cover: "/offline/CIMORY BOGOR (1).jpg", photos: ["/offline/CIMORY BOGOR (1).jpg", "/offline/CIMORY BOGOR (2).jpg"] },
   { title: "Birthday mB", cover: "/offline/BIRTHDAY (1).jpg", photos: ["/offline/BIRTHDAY (1).jpg", "/offline/BIRTHDAY (2).jpg", "/offline/BIRTHDAY (3).jpeg"] },
   { title: "Central Park", cover: "/offline/CENTRAL PARK (1).jpg", photos: ["/offline/CENTRAL PARK (1).jpg", "/offline/CENTRAL PARK (2).jpg"] },

@@ -23,7 +23,7 @@ const members: {
     { name: "Tika",     nickname: "Chiizue-mB",        photo: "/members/Tika.jpeg" },
     { name: "Veronika", nickname: "4FMuse-mB",         photo: "/members/Veronika.jpeg" },
     { name: "Vina",     nickname: "Puggymax-mB",       photo: "/members/Vina.jpeg" },
-    { name: "Vio",      nickname: "cien-mB",           photo: "/members/Vio.jpeg" },
+    { name: "Vio",      nickname: "Cien-mB",           photo: "/members/Vio.jpeg" },
   ],
   male: [
     { name: "Ajot",     nickname: "lavmB1Fc / GRz-Kyllua-mB", photo: "/members/Ajot.jpg" },
@@ -54,9 +54,9 @@ const members: {
 type MemberType = { name: string; nickname: string | null; photo: string | null };
 
 function MemberCarousel({ members, gender }: { members: MemberType[]; gender: "F" | "M" }) {
-  const [perPage, setPerPage] = useState(2);
+  const [perPage, setPerPage] = useState(4);
   useEffect(() => {
-    const update = () => setPerPage(window.innerWidth >= 640 ? 4 : 2);
+    const update = () => setPerPage(window.innerWidth >= 768 ? 6 : 4);
     update();
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
@@ -99,15 +99,14 @@ function MemberCarousel({ members, gender }: { members: MemberType[]; gender: "F
   const group = members.slice(page * perPage, page * perPage + perPage);
 
   const slideStyle: React.CSSProperties = {
-    transition: "transform 350ms ease, opacity 350ms ease",
-    transform: sliding === "left" ? "translateX(-60px)" : sliding === "right" ? "translateX(60px)" : "translateX(0)",
+    transition: "opacity 350ms ease",
     opacity: sliding ? 0 : 1,
   };
 
   return (
     <div className="relative flex flex-col items-center">
       <div
-        className="relative flex items-center justify-center w-full min-h-[200px] sm:min-h-[290px] md:min-h-[340px]"
+        className="relative flex items-center justify-center w-full"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
@@ -118,11 +117,11 @@ function MemberCarousel({ members, gender }: { members: MemberType[]; gender: "F
         >‹</button>
 
         {/* Cards */}
-        <div style={slideStyle} className="flex gap-3 sm:gap-4 md:gap-5 justify-center px-8 sm:px-12">
+        <div style={slideStyle} className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 w-full px-1 justify-items-center">
           {group.map((m) => (
             <div
               key={m.name}
-              className="relative w-36 h-52 sm:w-52 sm:h-72 md:w-60 md:h-80 rounded-2xl overflow-hidden gold-border cursor-pointer hover:-translate-y-1 transition-transform flex-shrink-0"
+              className="relative w-36 h-52 sm:w-40 sm:h-56 md:w-44 md:h-60 rounded-2xl overflow-hidden gold-border cursor-pointer hover:-translate-y-1 transition-transform"
               onClick={() => m.photo && setOpenMember(m)}
             >
               {m.photo ? (
@@ -225,7 +224,7 @@ export default function MembersPage() {
       <Navbar />
       <PageBackground />
 
-      <main className="h-[100dvh] overflow-hidden flex flex-col max-w-4xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20">
+      <main className="flex flex-col max-w-4xl md:max-w-5xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-10">
 
         {/* Header */}
         <div className="text-center py-4 sm:py-6 flex-shrink-0">

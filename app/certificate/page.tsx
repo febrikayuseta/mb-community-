@@ -202,6 +202,14 @@ export default function CertificatePage() {
           <p className="text-gray-400 mt-2 text-sm italic">ᴛᴏɢᴇᴛʜᴇʀ ᴡᴇ ꜱᴛᴀɴᴅ, ʙᴇᴄᴀᴜꜱᴇ ᴡᴇ&apos;ʀᴇ ᴍᴇᴀɴᴛ ᴛᴏ ʙᴇ</p>
         </div>
 
+        {/* Certificate Aliansi - Featured */}
+        <div className="mb-6 sm:mb-10">
+          <p className="text-xs uppercase tracking-widest text-[#c9a84c] mb-3 text-center">Certificate Aliansi</p>
+          <div className="rounded-2xl sm:rounded-3xl overflow-hidden gold-border relative w-full max-w-3xl mx-auto">
+            <img src="/certificate/Certificate mB.png" alt="Certificate Aliansi mB" className="w-full h-auto object-contain" />
+          </div>
+        </div>
+
         <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-2xl md:max-w-4xl mx-auto">
           {albums.map((album) => (
             <div key={album.title}>

@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TeamCard from "@/components/TeamCard";
 import PageBackground from "@/components/PageBackground";
+import Link from "next/link";
 import { useState, useEffect, useRef, useCallback } from "react";
 
 const team = {
@@ -155,9 +156,9 @@ export default function TeamPage() {
 
         <div className="text-center mb-10 sm:mb-16">
           <h1 className="text-3xl sm:text-4xl font-black gold-gradient">Meet The Team</h1>
-          <a href="/members" className="inline-block mt-4 px-5 py-2 rounded-full gold-border text-[#c9a84c] font-semibold text-sm hover:bg-[#c9a84c11] transition-colors">
+          <Link href="/members" className="inline-block mt-4 px-5 py-2 rounded-full gold-border text-[#c9a84c] font-semibold text-sm hover:bg-[#c9a84c11] transition-colors">
             30+ Members →
-          </a>
+          </Link>
         </div>
 
         {/* Founders + Leadership */}
