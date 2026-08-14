@@ -75,7 +75,7 @@ function PairCarousel({ members, highlight }: { members: Member[]; highlight?: b
         {/* Prev */}
         <button
           onClick={handlePrev}
-          className="absolute left-0 sm:left-2 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 text-white text-xl sm:text-2xl flex items-center justify-center hover:bg-[#c9a84c] hover:text-black transition-colors"
+          className="absolute left-0 sm:left-2 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 text-white text-xl sm:text-2xl flex items-center justify-center hover:bg-[#5b9bd5] hover:text-black transition-colors"
         >‹</button>
 
         {/* 2 Cards */}
@@ -106,7 +106,7 @@ function PairCarousel({ members, highlight }: { members: Member[]; highlight?: b
         {/* Next */}
         <button
           onClick={handleNext}
-          className="absolute right-0 sm:right-2 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 text-white text-xl sm:text-2xl flex items-center justify-center hover:bg-[#c9a84c] hover:text-black transition-colors"
+          className="absolute right-0 sm:right-2 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 text-white text-xl sm:text-2xl flex items-center justify-center hover:bg-[#5b9bd5] hover:text-black transition-colors"
         >›</button>
       </div>
 
@@ -116,7 +116,7 @@ function PairCarousel({ members, highlight }: { members: Member[]; highlight?: b
           <button
             key={i}
             onClick={() => goTo(i, i > pageRef.current ? "left" : "right")}
-            className={`h-1.5 rounded-full transition-all duration-300 ${i === page ? "bg-[#c9a84c] w-6" : "bg-white/30 w-1.5"}`}
+            className={`h-1.5 rounded-full transition-all duration-300 ${i === page ? "bg-[#5b9bd5] w-6" : "bg-white/30 w-1.5"}`}
           />
         ))}
       </div>
@@ -131,12 +131,12 @@ function PairCarousel({ members, highlight }: { members: Member[]; highlight?: b
             <img src={openMember.image} alt={openMember.name} className="w-full rounded-2xl object-cover shadow-2xl" />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent rounded-b-2xl px-4 py-3 sm:px-5 sm:py-4">
               <p className="text-white font-bold text-base sm:text-lg">{openMember.name}</p>
-              {openMember.nickname && <p className="text-[#c9a84c] text-xs sm:text-sm">{openMember.nickname}</p>}
+              {openMember.nickname && <p className="text-[#5b9bd5] text-xs sm:text-sm">{openMember.nickname}</p>}
               <p className="text-gray-300 text-xs sm:text-sm">{openMember.role}</p>
             </div>
             <button
               onClick={() => { setOpenMember(null); setPaused(false); }}
-              className="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-[#c9a84c] hover:text-black transition-colors"
+              className="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-[#5b9bd5] hover:text-black transition-colors"
             >×</button>
           </div>
         </div>
@@ -156,20 +156,20 @@ export default function TeamPage() {
 
         <div className="text-center mb-10 sm:mb-16">
           <h1 className="text-3xl sm:text-4xl font-black gold-gradient">Meet The Team</h1>
-          <Link href="/members" className="inline-block mt-4 px-5 py-2 rounded-full gold-border text-[#c9a84c] font-semibold text-sm hover:bg-[#c9a84c11] transition-colors">
+          <Link href="/members" className="inline-block mt-4 px-5 py-2 rounded-full gold-border text-[#5b9bd5] font-semibold text-sm hover:bg-[#5b9bd511] transition-colors">
             30+ Members →
           </Link>
         </div>
 
         {/* Founders + Leadership */}
         <section className="mb-10 sm:mb-14">
-          <h2 className="text-xs uppercase tracking-widest text-[#c9a84c] mb-6 sm:mb-8 text-center">Founder & Leadership</h2>
+          <h2 className="text-xs uppercase tracking-widest text-[#5b9bd5] mb-6 sm:mb-8 text-center">Founder & Leadership</h2>
           <PairCarousel members={allLeadership} highlight />
         </section>
 
         {/* Staff */}
         <section className="mb-10 sm:mb-14">
-          <h2 className="text-xs uppercase tracking-widest text-[#c9a84c] mb-6 sm:mb-8 text-center">Staff</h2>
+          <h2 className="text-xs uppercase tracking-widest text-[#5b9bd5] mb-6 sm:mb-8 text-center">Staff</h2>
           <PairCarousel members={team.staff} />
         </section>
 

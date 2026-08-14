@@ -5,7 +5,7 @@ import PageBackground from "@/components/PageBackground";
 import { useState, useEffect, useRef, useCallback } from "react";
 
 const offlineAlbums = [
-  { title: "BUKBER 2026", cover: "/offline/BUKBER (1).png", photos: ["/offline/BUKBER (1).png", "/offline/BUKBER (2).png", "/offline/BUKBER (3).png"] },
+  { title: "BUKBER 2026", cover: "/offline/BUKBER (1).png", photos: ["/offline/BUKBER (1).png", "/offline/BUKBER (2).png", "/offline/BUKBER (3).jpeg"] },
   { title: "CIMORY - Bogor", cover: "/offline/CIMORY BOGOR (1).jpg", photos: ["/offline/CIMORY BOGOR (1).jpg", "/offline/CIMORY BOGOR (2).jpg"] },
   { title: "Birthday mB", cover: "/offline/BIRTHDAY (1).jpg", photos: ["/offline/BIRTHDAY (1).jpg", "/offline/BIRTHDAY (2).jpg", "/offline/BIRTHDAY (3).jpeg"] },
   { title: "Central Park", cover: "/offline/CENTRAL PARK (1).jpg", photos: ["/offline/CENTRAL PARK (1).jpg", "/offline/CENTRAL PARK (2).jpg"] },
@@ -14,9 +14,9 @@ const offlineAlbums = [
 ];
 
 const videos = [
-  "ZGDbtYLOXp0","LQ-AgpQuHAI","gJgiUluSn40","VJ4oegGNcP8",
-  "48_jcCv1TeE","VPzk1W4MKec","N8rudJOn5u8","E5C1u93Q7AY",
-  "gl5nICKyIQo","SMNxvZU6aK0",
+  "gl5nICKyIQo","g4_u5ygqwHA","Ydwb7A1q_kU","N8rudJOn5u8","ZGDbtYLOXp0","LQ-AgpQuHAI","gJgiUluSn40","VJ4oegGNcP8",
+  "48_jcCv1TeE","VPzk1W4MKec","E5C1u93Q7AY",
+  "SMNxvZU6aK0",
 ];
 
 const onlineAlbums: typeof offlineAlbums = [
@@ -58,11 +58,11 @@ function AlbumCover({ album, onClick }: { album: Album; onClick: () => void }) {
       ))}
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent transition-all duration-300 group-hover:from-black/90" />
       <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
-        <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-0.5 sm:mb-1">{album.photos.length} foto</p>
+        <p className="text-[#5b9bd5] text-xs uppercase tracking-widest mb-0.5 sm:mb-1">{album.photos.length} foto</p>
         <p className="text-white font-bold text-sm sm:text-lg">{album.title}</p>
       </div>
       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <span className="bg-[#c9a84c] text-black text-xs sm:text-sm font-bold px-4 sm:px-6 py-2 sm:py-2.5 rounded-full">Lihat Album</span>
+        <span className="bg-[#5b9bd5] text-black text-xs sm:text-sm font-bold px-4 sm:px-6 py-2 sm:py-2.5 rounded-full">Lihat Album</span>
       </div>
     </div>
   );
@@ -148,16 +148,16 @@ function AlbumModal({ album, onClose }: { album: Album; onClose: () => void }) {
         {/* Header */}
         <div className="flex items-center justify-between px-4 sm:px-6 pt-4 sm:pt-5 pb-3 sm:pb-4">
           <div>
-            <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-0.5">Album</p>
+            <p className="text-[#5b9bd5] text-xs uppercase tracking-widest mb-0.5">Album</p>
             <h2 className="text-base sm:text-lg font-black text-white">{album.title}</h2>
             <p className="text-gray-500 text-xs">{current + 1} / {album.photos.length}</p>
           </div>
           <div className="flex items-center gap-2">
             {/* Zoom controls */}
-            <button onClick={() => setZoom(z => Math.min(4, z + 0.5))} className="w-7 h-7 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#c9a84c] hover:text-black transition-colors text-base">+</button>
+            <button onClick={() => setZoom(z => Math.min(4, z + 0.5))} className="w-7 h-7 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#5b9bd5] hover:text-black transition-colors text-base">+</button>
             <span className="text-gray-500 text-xs w-8 text-center">{Math.round(zoom * 100)}%</span>
-            <button onClick={() => { setZoom(z => Math.max(1, z - 0.5)); if (zoom <= 1.5) resetZoom(); }} className="w-7 h-7 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#c9a84c] hover:text-black transition-colors text-base">−</button>
-            <button onClick={handleClose} className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#c9a84c] hover:text-black transition-colors text-lg sm:text-xl ml-1">×</button>
+            <button onClick={() => { setZoom(z => Math.max(1, z - 0.5)); if (zoom <= 1.5) resetZoom(); }} className="w-7 h-7 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#5b9bd5] hover:text-black transition-colors text-base">−</button>
+            <button onClick={handleClose} className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#5b9bd5] hover:text-black transition-colors text-lg sm:text-xl ml-1">×</button>
           </div>
         </div>
 
@@ -184,11 +184,11 @@ function AlbumModal({ album, onClose }: { album: Album; onClose: () => void }) {
             onClick={() => { if (zoom === 1) setPaused(p => !p); }}
           />
           {zoom === 1 && <>
-            <button onClick={prev} className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 text-white text-xl sm:text-2xl flex items-center justify-center hover:bg-[#c9a84c] hover:text-black transition-colors">‹</button>
-            <button onClick={next} className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 text-white text-xl sm:text-2xl flex items-center justify-center hover:bg-[#c9a84c] hover:text-black transition-colors">›</button>
+            <button onClick={prev} className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 text-white text-xl sm:text-2xl flex items-center justify-center hover:bg-[#5b9bd5] hover:text-black transition-colors">‹</button>
+            <button onClick={next} className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 text-white text-xl sm:text-2xl flex items-center justify-center hover:bg-[#5b9bd5] hover:text-black transition-colors">›</button>
           </>}
           {zoom > 1 && (
-            <button onClick={resetZoom} className="absolute bottom-2 right-2 px-3 py-1 rounded-full bg-black/60 text-[#c9a84c] text-xs hover:bg-[#c9a84c] hover:text-black transition-colors">Reset</button>
+            <button onClick={resetZoom} className="absolute bottom-2 right-2 px-3 py-1 rounded-full bg-black/60 text-[#5b9bd5] text-xs hover:bg-[#5b9bd5] hover:text-black transition-colors">Reset</button>
           )}
         </div>
 
@@ -198,7 +198,7 @@ function AlbumModal({ album, onClose }: { album: Album; onClose: () => void }) {
             <button
               key={i}
               onClick={() => goTo(i)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? "bg-[#c9a84c] w-6" : "bg-white/30 w-1.5"}`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? "bg-[#5b9bd5] w-6" : "bg-white/30 w-1.5"}`}
             />
           ))}
         </div>
@@ -229,7 +229,7 @@ export default function GalleryPage() {
 
         {/* COTM - Featured */}
         <div className="mb-6 sm:mb-8">
-          <p className="text-xs uppercase tracking-widest text-[#c9a84c] mb-3 text-center">Community of The Month</p>
+          <p className="text-xs uppercase tracking-widest text-[#5b9bd5] mb-3 text-center">Community of The Month</p>
           <a href="https://ayodance.megaxus.com/v1/news/06/07/2026/community-of-the-month-insiemeantobe" target="_blank" rel="noopener noreferrer" className="block rounded-2xl sm:rounded-3xl overflow-hidden gold-border relative w-full max-w-2xl mx-auto hover:opacity-90 transition-opacity">
             <img src="/COTM.png" alt="Community of The Month" className="w-full h-auto object-contain" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
@@ -243,16 +243,16 @@ export default function GalleryPage() {
         <div className="flex justify-center gap-3 mb-6 sm:mb-8">
           {(["online", "offline", "video"] as const).map((t) => (
             <button key={t} onClick={() => setTab(t)}
-              className={`px-8 py-2.5 rounded-full text-sm sm:text-base font-semibold transition-all capitalize ${tab === t ? "bg-[#c9a84c] text-black" : "border border-[#c9a84c]/40 text-[#c9a84c] hover:bg-[#c9a84c]/10"}`}>
+              className={`px-8 py-2.5 rounded-full text-sm sm:text-base font-semibold transition-all capitalize ${tab === t ? "bg-[#5b9bd5] text-black" : "border border-[#5b9bd5]/40 text-[#5b9bd5] hover:bg-[#5b9bd5]/10"}`}>
               {t === "video" ? "Video" : t === "online" ? "Online" : "Offline"}
             </button>
           ))}
         </div>
 
         {tab === "video" ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 max-w-5xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 max-w-5xl mx-auto">
             {videos.map((id) => (
-              <div key={id} className="rounded-xl overflow-hidden gold-border" style={{ aspectRatio: "9/16" }}>
+              <div key={id} className="rounded-xl overflow-hidden gold-border w-[calc(50%-6px)] sm:w-[calc(33.333%-8px)] md:w-[calc(25%-9px)] lg:w-[calc(20%-10px)]" style={{ aspectRatio: "9/16" }}>
                 <iframe
                   src={`https://www.youtube.com/embed/${id}`}
                   className="w-full h-full"

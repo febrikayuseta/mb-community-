@@ -2,9 +2,9 @@
 import { useRef } from "react";
 
 const videos = [
-  "ZGDbtYLOXp0","LQ-AgpQuHAI","gJgiUluSn40","VJ4oegGNcP8",
-  "48_jcCv1TeE","VPzk1W4MKec","N8rudJOn5u8","E5C1u93Q7AY",
-  "gl5nICKyIQo","SMNxvZU6aK0",
+  "gl5nICKyIQo","g4_u5ygqwHA","Ydwb7A1q_kU","N8rudJOn5u8","ZGDbtYLOXp0","LQ-AgpQuHAI","gJgiUluSn40","VJ4oegGNcP8",
+  "48_jcCv1TeE","VPzk1W4MKec","E5C1u93Q7AY",
+  "SMNxvZU6aK0",
 ];
 
 export default function VideoCarousel() {
@@ -39,7 +39,7 @@ export default function VideoCarousel() {
       <div className="relative max-w-[680px] mx-auto">
         <button
           onClick={() => scroll("left")}
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-8 h-8 rounded-full bg-black/70 text-white text-xl flex items-center justify-center hover:bg-[#c9a84c] hover:text-black transition-colors"
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-8 h-8 rounded-full bg-black/70 text-white text-xl flex items-center justify-center hover:bg-[#5b9bd5] hover:text-black transition-colors"
         >‹</button>
 
         <div
@@ -65,7 +65,7 @@ export default function VideoCarousel() {
 
         <button
           onClick={() => scroll("right")}
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-8 h-8 rounded-full bg-black/70 text-white text-xl flex items-center justify-center hover:bg-[#c9a84c] hover:text-black transition-colors"
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-8 h-8 rounded-full bg-black/70 text-white text-xl flex items-center justify-center hover:bg-[#5b9bd5] hover:text-black transition-colors"
         >›</button>
       </div>
     </div>

@@ -41,7 +41,7 @@ export default function AboutPage() {
               </div>
               <p className="text-gray-400 text-[10px] sm:text-sm">INSIEME</p>
             </div>
-            <div className="text-[#c9a84c] text-lg sm:text-2xl">×</div>
+            <div className="text-[#5b9bd5] text-lg sm:text-2xl">×</div>
             <div className="flex flex-col items-center gap-1 sm:gap-2">
               <div className="w-12 h-12 sm:w-20 sm:h-20 rounded-full bg-[#1a1a1a] gold-border relative overflow-hidden">
                 <Image src="/logo-komunitas2.jpeg" alt="MeantToBe" fill className="object-cover scale-110" />

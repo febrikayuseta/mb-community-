@@ -113,7 +113,7 @@ function MemberCarousel({ members, gender }: { members: MemberType[]; gender: "F
         {/* Prev */}
         <button
           onClick={handlePrev}
-          className="absolute left-0 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 text-white text-xl sm:text-2xl flex items-center justify-center hover:bg-[#c9a84c] hover:text-black transition-colors"
+          className="absolute left-0 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 text-white text-xl sm:text-2xl flex items-center justify-center hover:bg-[#5b9bd5] hover:text-black transition-colors"
         >‹</button>
 
         {/* Cards */}
@@ -143,7 +143,7 @@ function MemberCarousel({ members, gender }: { members: MemberType[]; gender: "F
         {/* Next */}
         <button
           onClick={handleNext}
-          className="absolute right-0 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 text-white text-xl sm:text-2xl flex items-center justify-center hover:bg-[#c9a84c] hover:text-black transition-colors"
+          className="absolute right-0 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 text-white text-xl sm:text-2xl flex items-center justify-center hover:bg-[#5b9bd5] hover:text-black transition-colors"
         >›</button>
       </div>
 
@@ -153,7 +153,7 @@ function MemberCarousel({ members, gender }: { members: MemberType[]; gender: "F
           <button
             key={i}
             onClick={() => goTo(i, i > pageRef.current ? "left" : "right")}
-            className={`h-1.5 rounded-full transition-all duration-300 ${i === page ? "bg-[#c9a84c] w-6" : "bg-white/30 w-1.5"}`}
+            className={`h-1.5 rounded-full transition-all duration-300 ${i === page ? "bg-[#5b9bd5] w-6" : "bg-white/30 w-1.5"}`}
           />
         ))}
       </div>
@@ -172,7 +172,7 @@ function MemberCarousel({ members, gender }: { members: MemberType[]; gender: "F
             </div>
             <button
               onClick={() => setOpenMember(null)}
-              className="absolute top-2 right-2 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-[#c9a84c] hover:text-black transition-colors"
+              className="absolute top-2 right-2 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-[#5b9bd5] hover:text-black transition-colors"
             >×</button>
           </div>
         </div>
@@ -240,7 +240,7 @@ export default function MembersPage() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Cari nama atau nickname..."
-            className="w-full bg-[#111]/80 border border-[#c9a84c44] rounded-full px-5 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#c9a84c] transition-colors"
+            className="w-full bg-[#111]/80 border border-[#5b9bd544] rounded-full px-5 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#5b9bd5] transition-colors"
           />
           {query && (
             <button onClick={() => setQuery("")} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors text-lg">×</button>
@@ -295,7 +295,7 @@ export default function MembersPage() {
               <p className="text-white font-bold text-base sm:text-lg">{openMember.nickname ?? openMember.name}</p>
               {openMember.nickname && <p className="text-gray-300 text-xs sm:text-sm">{openMember.name}</p>}
             </div>
-            <button onClick={() => setOpenMember(null)} className="absolute top-2 right-2 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-[#c9a84c] hover:text-black transition-colors">×</button>
+            <button onClick={() => setOpenMember(null)} className="absolute top-2 right-2 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-[#5b9bd5] hover:text-black transition-colors">×</button>
           </div>
         </div>
       )}

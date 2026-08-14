@@ -65,7 +65,7 @@ export default function OpenTestPage() {
           <p className="text-gray-500 text-[10px] uppercase tracking-widest mb-2">Format Nick</p>
           <div className="flex flex-wrap gap-2">
             {["mBnick", "mBnick-", "nickmB", "nickmB-", "nick-mB"].map((fmt) => (
-              <span key={fmt} className="px-3 py-1 rounded-full border border-[#c9a84c55] text-[#c9a84c] text-xs sm:text-sm font-mono">
+              <span key={fmt} className="px-3 py-1 rounded-full border border-[#5b9bd555] text-[#5b9bd5] text-xs sm:text-sm font-mono">
                 {fmt}
               </span>
             ))}
@@ -79,7 +79,7 @@ export default function OpenTestPage() {
           <div className="flex flex-col gap-3">
             {rules.map((r) => (
               <div key={r.num} className="card-bg gold-border rounded-xl p-3 sm:p-4 flex gap-3 sm:gap-4 items-start">
-                <span className="text-[#c9a84c] font-black text-sm sm:text-base min-w-[28px]">{r.num}</span>
+                <span className="text-[#5b9bd5] font-black text-sm sm:text-base min-w-[28px]">{r.num}</span>
                 <div>
                   <p className="text-white font-semibold text-sm sm:text-base">{r.title}</p>
                   <p className="text-gray-400 text-xs sm:text-sm mt-0.5 leading-relaxed text-justify">{r.desc}</p>
@@ -99,7 +99,7 @@ export default function OpenTestPage() {
 
         {/* Closing */}
         <div className="text-center py-4">
-          <p className="text-[#c9a84c] text-sm sm:text-base tracking-widest italic">
+          <p className="text-[#5b9bd5] text-sm sm:text-base tracking-widest italic">
             ᴛᴏɢᴇᴛʜᴇʀ ᴡᴇ ꜱᴛᴀɴᴅ, ʙᴇᴄᴀᴜꜱᴇ ᴡᴇ&apos;ʀᴇ ᴍᴇᴀɴᴛ ᴛᴏ ʙᴇ
           </p>
         </div>

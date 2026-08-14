@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function PageBackground({ desktop = "/Cover NoChara.png" }: { desktop?: string }) {
+export default function PageBackground({ desktop = "/Cover NoChara.jpeg" }: { desktop?: string }) {
   return (
     <div className="fixed inset-0 -z-10">
       <Image src={desktop} alt="background" fill className="object-cover hidden sm:block" />

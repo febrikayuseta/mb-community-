@@ -37,7 +37,7 @@ export default function MusicPlayer() {
     <button
       onClick={toggle}
       title={playing ? "Pause music" : "Play music"}
-      className="fixed bottom-5 right-5 z-50 w-11 h-11 rounded-full bg-[#c9a84c] text-black flex items-center justify-center shadow-lg hover:bg-[#e8c96a] transition-colors text-lg"
+      className="fixed bottom-5 right-5 z-50 w-11 h-11 rounded-full bg-[#5b9bd5] text-black flex items-center justify-center shadow-lg hover:bg-[#e8c96a] transition-colors text-lg"
       style={{ bottom: "calc(1.25rem + env(safe-area-inset-bottom))" }}
     >
       {playing ? "⏸" : "▶"}

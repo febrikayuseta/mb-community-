@@ -113,11 +113,11 @@ function AlbumCover({ album, onClick }: { album: Album; onClick: () => void }) {
       ))}
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent transition-all duration-300 group-hover:from-black/90" />
       <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
-        <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-0.5 sm:mb-1">{album.photos.length} foto</p>
+        <p className="text-[#5b9bd5] text-xs uppercase tracking-widest mb-0.5 sm:mb-1">{album.photos.length} foto</p>
         <p className="text-white font-bold text-sm sm:text-lg">{album.title}</p>
       </div>
       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <span className="bg-[#c9a84c] text-black text-xs sm:text-sm font-bold px-4 sm:px-6 py-2 sm:py-2.5 rounded-full">Lihat Album</span>
+        <span className="bg-[#5b9bd5] text-black text-xs sm:text-sm font-bold px-4 sm:px-6 py-2 sm:py-2.5 rounded-full">Lihat Album</span>
       </div>
     </div>
   );
@@ -151,11 +151,11 @@ function AlbumModal({ album, onClose }: { album: Album; onClose: () => void }) {
         {/* Header */}
         <div className="flex items-center justify-between px-4 sm:px-6 pt-4 sm:pt-5 pb-3 sm:pb-4">
           <div>
-            <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-0.5">Certificate & Events</p>
+            <p className="text-[#5b9bd5] text-xs uppercase tracking-widest mb-0.5">Certificate & Events</p>
             <h2 className="text-base sm:text-lg font-black text-white">{album.title}</h2>
             <p className="text-gray-500 text-xs">{current + 1} / {album.photos.length}</p>
           </div>
-          <button onClick={onClose} className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#c9a84c] hover:text-black transition-colors text-lg sm:text-xl">×</button>
+          <button onClick={onClose} className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#5b9bd5] hover:text-black transition-colors text-lg sm:text-xl">×</button>
         </div>
 
         {/* Photo */}
@@ -166,8 +166,8 @@ function AlbumModal({ album, onClose }: { album: Album; onClose: () => void }) {
             className="w-full h-full object-contain transition-all duration-300"
             style={{ opacity: visible ? 1 : 0, transform: visible ? "scale(1)" : "scale(1.02)" }}
           />
-          <button onClick={prev} className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 text-white text-xl sm:text-2xl flex items-center justify-center hover:bg-[#c9a84c] hover:text-black transition-colors">‹</button>
-          <button onClick={next} className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 text-white text-xl sm:text-2xl flex items-center justify-center hover:bg-[#c9a84c] hover:text-black transition-colors">›</button>
+          <button onClick={prev} className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 text-white text-xl sm:text-2xl flex items-center justify-center hover:bg-[#5b9bd5] hover:text-black transition-colors">‹</button>
+          <button onClick={next} className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 text-white text-xl sm:text-2xl flex items-center justify-center hover:bg-[#5b9bd5] hover:text-black transition-colors">›</button>
         </div>
 
         {/* Dots */}
@@ -176,7 +176,7 @@ function AlbumModal({ album, onClose }: { album: Album; onClose: () => void }) {
             <button
               key={i}
               onClick={() => goTo(i)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? "bg-[#c9a84c] w-6" : "bg-white/30 w-1.5"}`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? "bg-[#5b9bd5] w-6" : "bg-white/30 w-1.5"}`}
             />
           ))}
         </div>
@@ -204,7 +204,7 @@ export default function CertificatePage() {
 
         {/* Certificate Aliansi - Featured */}
         <div className="mb-6 sm:mb-10">
-          <p className="text-xs uppercase tracking-widest text-[#c9a84c] mb-3 text-center">Certificate Aliansi</p>
+          <p className="text-xs uppercase tracking-widest text-[#5b9bd5] mb-3 text-center">Certificate Aliansi</p>
           <div className="rounded-2xl sm:rounded-3xl overflow-hidden gold-border relative w-full max-w-3xl mx-auto">
             <img src="/certificate/Certificate mB.png" alt="Certificate Aliansi mB" className="w-full h-auto object-contain" />
           </div>

@@ -17,7 +17,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#0d0d0d]/90 backdrop-blur-md border-b border-[#c9a84c22]">
+    <nav className="fixed top-0 w-full z-50 bg-[#0d0d0d]/90 backdrop-blur-md border-b border-[#5b9bd522]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <span className="text-lg sm:text-xl font-bold gold-gradient">mB</span>
@@ -31,7 +31,7 @@ export default function Navbar() {
               href={l.href}
               className={`text-sm transition-colors ${
                 pathname === l.href
-                  ? "text-[#c9a84c] font-semibold"
+                  ? "text-[#5b9bd5] font-semibold"
                   : "text-gray-400 hover:text-white"
               }`}
             >
@@ -49,14 +49,14 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-[#111] border-t border-[#c9a84c22] px-4 sm:px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-[#111] border-t border-[#5b9bd522] px-4 sm:px-6 py-4 flex flex-col gap-4">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
               className={`text-sm ${
-                pathname === l.href ? "text-[#c9a84c] font-semibold" : "text-gray-400"
+                pathname === l.href ? "text-[#5b9bd5] font-semibold" : "text-gray-400"
               }`}
             >
               {l.label}

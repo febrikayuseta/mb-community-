@@ -3,8 +3,8 @@
 :root {
   --background: #0d0d0d;
   --foreground: #f0f0f0;
-  --accent: #c9a84c;
-  --accent-light: #e8c96a;
+  --accent: #5b9bd5;
+  --accent-light: #89c4f0;
 }
 
 @theme inline {
@@ -36,17 +36,17 @@ p, h1, h2, h3 {
 }
 
 .gold-gradient {
-  background: linear-gradient(135deg, #c9a84c, #f0d060, #c9a84c);
+  background: linear-gradient(135deg, #5b9bd5, #89c4f0, #5b9bd5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: #c9a84c;
+  color: #5b9bd5;
   text-shadow: none;
-  filter: drop-shadow(0 0 8px rgba(201, 168, 76, 0.4));
+  filter: drop-shadow(0 0 8px rgba(91, 155, 213, 0.4));
 }
 
 .gold-border {
-  border: 1px solid #c9a84c44;
+  border: 1px solid #5b9bd544;
 }
 
 .card-bg {
