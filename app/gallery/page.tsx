@@ -11,6 +11,7 @@ const offlineAlbums = [
   { title: "Central Park", cover: "/offline/CENTRAL PARK (1).jpg", photos: ["/offline/CENTRAL PARK (1).jpg", "/offline/CENTRAL PARK (2).jpg"] },
   { title: "Snowville", cover: "/offline/SNOWVILLE (2).jpg", photos: ["/offline/SNOWVILLE (1).jpg", "/offline/SNOWVILLE (2).jpg", "/offline/SNOWVILLE (3).jpeg", "/offline/SNOWVILLE (4).jpg", "/offline/SNOWVILLE (5).jpg"] },
   { title: "PHOTOBOOTH EDITION", cover: "/offline/PHOTOBOOTH (1).jpg", photos: ["/offline/PHOTOBOOTH (1).jpg", "/offline/MTB-meet 1.jpg", "/offline/PHOTOBOOTH (2).jpg", "/offline/PHOTOBOOTH (3).jpg", "/offline/MTB-meet 2.jpg", "/offline/PHOTOBOOTH (4).jpg", "/offline/PHOTOBOOTH (5).jpg", "/offline/MTB-meet 3.jpg", "/offline/PHOTOBOOTH (6).jpg", "/offline/PHOTOBOOTH (7).jpg", "/offline/PHOTOBOOTH (8).jpg"] },
+  { title: "Jakarta Meet", cover: "/offline/Jakarta Meet (1).jpg", photos: ["/offline/Jakarta Meet (1).jpg", "/offline/Jakarta Meet (2).jpg", "/offline/Jakarta Meet (3).jpg", "/offline/Jakarta Meet (4).jpg", "/offline/Jakarta Meet (5).jpg", "/offline/Jakarta Meet (6).jpg"] },
 ];
 
 const videos = [
@@ -265,12 +266,20 @@ export default function GalleryPage() {
         ) : albums.length === 0 ? (
           <div className="text-center py-16 text-gray-500 text-sm">Belum ada album — segera hadir!</div>
         ) : (
-          <div className="grid grid-cols-2 gap-5 sm:gap-6 max-w-2xl mx-auto">
-            {albums.map((album) => (
-              <AlbumCover key={album.title} album={album} onClick={() => setOpenAlbum(album)} />
-            ))}
-            {isOdd && <div />}
-          </div>
+          <>
+            <div className="grid grid-cols-2 gap-5 sm:gap-6 max-w-2xl mx-auto">
+              {(isOdd ? albums.slice(0, -1) : albums).map((album) => (
+                <AlbumCover key={album.title} album={album} onClick={() => setOpenAlbum(album)} />
+              ))}
+            </div>
+            {isOdd && (
+              <div className="flex justify-center mt-5 sm:mt-6 max-w-2xl mx-auto">
+                <div className="w-[calc(50%-10px)] sm:w-[calc(50%-12px)]">
+                  <AlbumCover album={albums[albums.length - 1]} onClick={() => setOpenAlbum(albums[albums.length - 1])} />
+                </div>
+              </div>
+            )}
+          </>
         )}
       </main>
       <Footer />

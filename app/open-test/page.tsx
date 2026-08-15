@@ -90,7 +90,7 @@ export default function OpenTestPage() {
         </div>
 
         {/* Sanksi */}
-        <div className="card-bg border border-red-500/30 rounded-2xl p-4 sm:p-6">
+        <div className="card-bg gold-border rounded-2xl p-4 sm:p-6">
           <h2 className="text-base sm:text-lg font-black text-red-400 mb-2 text-center">SANKSI</h2>
           <p className="text-gray-300 text-sm sm:text-base leading-relaxed text-justify">
             Jika terbukti melanggar salah satu rules yang berlaku, maka member akan dikeluarkan langsung secara tidak hormat dari community.
