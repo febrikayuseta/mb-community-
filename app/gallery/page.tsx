@@ -29,7 +29,7 @@ const onlineAlbums: typeof offlineAlbums = [
 
 type Album = typeof offlineAlbums[0];
 
-function AlbumCover({ album, onClick }: { album: Album; onClick: () => void }) {
+function AlbumCover({ album, onClick, landscape }: { album: Album; onClick: () => void; landscape?: boolean }) {
   const [current, setCurrent] = useState(0);
   const currentRef = useRef(0);
 
@@ -45,7 +45,7 @@ function AlbumCover({ album, onClick }: { album: Album; onClick: () => void }) {
   return (
     <div
       className="group cursor-pointer rounded-2xl sm:rounded-3xl overflow-hidden gold-border relative w-full"
-      style={{ aspectRatio: "3 / 4" }}
+      style={{ aspectRatio: landscape ? "16 / 9" : "3 / 4" }}
       onClick={onClick}
     >
       {album.photos.map((photo, i) => (
@@ -274,8 +274,8 @@ export default function GalleryPage() {
             </div>
             {isOdd && (
               <div className="flex justify-center mt-5 sm:mt-6 max-w-2xl mx-auto">
-                <div className="w-[calc(50%-10px)] sm:w-[calc(50%-12px)]">
-                  <AlbumCover album={albums[albums.length - 1]} onClick={() => setOpenAlbum(albums[albums.length - 1])} />
+                <div className="w-full">
+                  <AlbumCover album={albums[albums.length - 1]} onClick={() => setOpenAlbum(albums[albums.length - 1])} landscape />
                 </div>
               </div>
             )}

@@ -206,7 +206,7 @@ export default function CertificatePage() {
         <div className="mb-6 sm:mb-10">
           <p className="text-xs uppercase tracking-widest text-[#5b9bd5] mb-3 text-center">Certificate Aliansi</p>
           <div className="rounded-2xl sm:rounded-3xl overflow-hidden gold-border relative w-full max-w-3xl mx-auto">
-            <img src="/certificate/Certificate mB.png" alt="Certificate Aliansi mB" className="w-full h-auto object-contain" />
+            <img src="/certificate/Black Purple Modern Certificate of Completion (2).png" alt="Certificate Aliansi mB" className="w-full h-auto object-contain" />
           </div>
         </div>
 
