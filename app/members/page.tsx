@@ -33,7 +33,7 @@ const members: {
     { name: "Aris",     nickname: "FS-Boris-mB",       photo: "/members/Aris.jpeg" },
     { name: "Celvin",   nickname: "mBLAZE-X5",         photo: "/members/Celvin.jpg" },
     { name: "Dennis",   nickname: "KH-Luxie-mB",       photo: "/members/Dennis.jpeg" },
-    { name: "Dhani",    nickname: "CreamB-X5",         photo: "/members/Dhani.jpeg" },
+    { name: "Dhani",    nickname: "imCreamB-X5",         photo: "/members/Dhani.jpeg" },
     { name: "Eric",     nickname: "mBRick-nLv",        photo: "/members/Eric.jpeg" },
     { name: "Indra",    nickname: "YunB-mB",           photo: "/members/Indra.webp" },
     { name: "Isal",     nickname: "RexXmB-REN",        photo: "/members/Isal.jpeg" },

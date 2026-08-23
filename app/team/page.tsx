@@ -71,7 +71,7 @@ function PairCarousel({ members, highlight }: { members: Member[]; highlight?: b
   return (
     <div className="relative flex flex-col items-center">
       {/* Card area */}
-      <div className="relative flex items-center justify-center w-full min-h-[240px] sm:min-h-[290px] md:min-h-[330px]">
+      <div className="relative flex items-center justify-center w-full min-h-[240px] sm:min-h-[260px] md:min-h-[280px]">
         {/* Prev */}
         <button
           onClick={handlePrev}
@@ -152,29 +152,29 @@ export default function TeamPage() {
     <>
       <Navbar />
       <PageBackground />
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 pt-24 sm:pt-32 pb-16 sm:pb-24">
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 pt-20 sm:pt-24 pb-10 sm:pb-16">
 
-        <div className="text-center mb-10 sm:mb-16">
+        <div className="text-center mb-6 sm:mb-8">
           <h1 className="text-3xl sm:text-4xl font-black gold-gradient">Meet The Team</h1>
-          <Link href="/members" className="inline-block mt-4 px-5 py-2 rounded-full gold-border text-[#5b9bd5] font-semibold text-sm hover:bg-[#5b9bd511] transition-colors">
+          <Link href="/members" className="inline-block mt-4 px-8 py-3 rounded-full gold-border text-[#5b9bd5] font-semibold text-base sm:text-lg hover:bg-[#5b9bd511] transition-colors">
             30+ Members →
           </Link>
         </div>
 
         {/* Founders + Leadership */}
-        <section className="mb-10 sm:mb-14">
-          <h2 className="text-xs uppercase tracking-widest text-[#5b9bd5] mb-6 sm:mb-8 text-center">Founder & Leadership</h2>
+        <section className="mb-3 sm:mb-4">
+          <h2 className="text-xs uppercase tracking-widest text-[#5b9bd5] mb-3 sm:mb-4 text-center">Founder & Leadership</h2>
           <PairCarousel members={allLeadership} highlight />
         </section>
 
         {/* Staff */}
-        <section className="mb-10 sm:mb-14">
-          <h2 className="text-xs uppercase tracking-widest text-[#5b9bd5] mb-6 sm:mb-8 text-center">Staff</h2>
+        <section className="mb-6 sm:mb-8">
+          <h2 className="text-xs uppercase tracking-widest text-[#5b9bd5] mb-3 sm:mb-4 text-center">Staff</h2>
           <PairCarousel members={team.staff} />
         </section>
 
         {/* Quote */}
-        <section className="text-center card-bg gold-border rounded-2xl py-6 sm:py-10 px-4 sm:px-8">
+        <section className="text-center card-bg gold-border rounded-2xl py-6 sm:py-8 px-4 sm:px-8">
           <p className="text-gray-300 leading-relaxed italic text-sm sm:text-base md:text-lg">
             &quot;Together, Meant to Be: Small in size, strong in bond — built on genuine friendship, shared moments, and real connections, both in-game and in real life.&quot;
           </p>

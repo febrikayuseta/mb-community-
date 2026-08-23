@@ -12,6 +12,7 @@ const offlineAlbums = [
   { title: "Snowville", cover: "/offline/SNOWVILLE (2).jpg", photos: ["/offline/SNOWVILLE (1).jpg", "/offline/SNOWVILLE (2).jpg", "/offline/SNOWVILLE (3).jpeg", "/offline/SNOWVILLE (4).jpg", "/offline/SNOWVILLE (5).jpg"] },
   { title: "PHOTOBOOTH EDITION", cover: "/offline/PHOTOBOOTH (1).jpg", photos: ["/offline/PHOTOBOOTH (1).jpg", "/offline/MTB-meet 1.jpg", "/offline/PHOTOBOOTH (2).jpg", "/offline/PHOTOBOOTH (3).jpg", "/offline/MTB-meet 2.jpg", "/offline/PHOTOBOOTH (4).jpg", "/offline/PHOTOBOOTH (5).jpg", "/offline/MTB-meet 3.jpg", "/offline/PHOTOBOOTH (6).jpg", "/offline/PHOTOBOOTH (7).jpg", "/offline/PHOTOBOOTH (8).jpg"] },
   { title: "Jakarta Meet", cover: "/offline/Jakarta Meet (1).jpg", photos: ["/offline/Jakarta Meet (1).jpg", "/offline/Jakarta Meet (2).jpg", "/offline/Jakarta Meet (3).jpg", "/offline/Jakarta Meet (4).jpg", "/offline/Jakarta Meet (5).jpg", "/offline/Jakarta Meet (6).jpg"] },
+  { title: "Medan Meet", cover: "/offline/mB Medan (1).jpeg", photos: ["/offline/mB Medan (1).jpeg", "/offline/mB Medan (2).jpeg", "/offline/mB Medan (3).jpeg"] },
 ];
 
 const videos = [
@@ -29,7 +30,7 @@ const onlineAlbums: typeof offlineAlbums = [
 
 type Album = typeof offlineAlbums[0];
 
-function AlbumCover({ album, onClick, landscape }: { album: Album; onClick: () => void; landscape?: boolean }) {
+function AlbumCover({ album, onClick, landscape, landscapeOnSm }: { album: Album; onClick: () => void; landscape?: boolean; landscapeOnSm?: boolean }) {
   const [current, setCurrent] = useState(0);
   const currentRef = useRef(0);
 
@@ -44,8 +45,8 @@ function AlbumCover({ album, onClick, landscape }: { album: Album; onClick: () =
 
   return (
     <div
-      className="group cursor-pointer rounded-2xl sm:rounded-3xl overflow-hidden gold-border relative w-full"
-      style={{ aspectRatio: landscape ? "16 / 9" : "3 / 4" }}
+      className={`group cursor-pointer rounded-2xl sm:rounded-3xl overflow-hidden gold-border relative w-full ${landscapeOnSm ? "aspect-[3/4] sm:aspect-[16/9]" : ""}`}
+      style={landscapeOnSm ? undefined : { aspectRatio: landscape ? "16 / 9" : "3 / 4" }}
       onClick={onClick}
     >
       {album.photos.map((photo, i) => (
@@ -213,7 +214,12 @@ export default function GalleryPage() {
   const [tab, setTab] = useState<"online" | "offline" | "video">("online");
 
   const albums = tab === "offline" ? offlineAlbums : onlineAlbums;
-  const isOdd = albums.length % 2 !== 0;
+  const desktopRemainder = albums.length % 3;
+  const mainAlbums = desktopRemainder === 0 ? albums : albums.slice(0, -desktopRemainder);
+  const tailAlbums = desktopRemainder === 0 ? [] : albums.slice(-desktopRemainder);
+  const mobileRemainder = albums.length % 2;
+  const mobileMainAlbums = mobileRemainder === 0 ? albums : albums.slice(0, -1);
+  const mobileTailAlbum = mobileRemainder === 1 ? albums[albums.length - 1] : null;
 
   return (
     <>
@@ -267,18 +273,40 @@ export default function GalleryPage() {
           <div className="text-center py-16 text-gray-500 text-sm">Belum ada album — segera hadir!</div>
         ) : (
           <>
-            <div className="grid grid-cols-2 gap-5 sm:gap-6 max-w-2xl mx-auto">
-              {(isOdd ? albums.slice(0, -1) : albums).map((album) => (
-                <AlbumCover key={album.title} album={album} onClick={() => setOpenAlbum(album)} />
-              ))}
-            </div>
-            {isOdd && (
-              <div className="flex justify-center mt-5 sm:mt-6 max-w-2xl mx-auto">
-                <div className="w-full">
-                  <AlbumCover album={albums[albums.length - 1]} onClick={() => setOpenAlbum(albums[albums.length - 1])} landscape />
-                </div>
+            {/* Mobile layout: 2-col, tail 1 landscape centered */}
+            <div className="sm:hidden max-w-4xl mx-auto">
+              <div className="grid grid-cols-2 gap-5">
+                {mobileMainAlbums.map((album) => (
+                  <AlbumCover key={album.title} album={album} onClick={() => setOpenAlbum(album)} />
+                ))}
               </div>
-            )}
+              {mobileTailAlbum && (
+                <div className="mt-5">
+                  <AlbumCover album={mobileTailAlbum} onClick={() => setOpenAlbum(mobileTailAlbum)} landscape />
+                </div>
+              )}
+            </div>
+
+            {/* Desktop layout: 3-col, tail landscape */}
+            <div className="hidden sm:block max-w-4xl mx-auto">
+              <div className="grid grid-cols-3 gap-6">
+                {mainAlbums.map((album) => (
+                  <AlbumCover key={album.title} album={album} onClick={() => setOpenAlbum(album)} />
+                ))}
+              </div>
+              {tailAlbums.length === 1 && (
+                <div className="mt-6">
+                  <AlbumCover album={tailAlbums[0]} onClick={() => setOpenAlbum(tailAlbums[0])} landscape />
+                </div>
+              )}
+              {tailAlbums.length === 2 && (
+                <div className="grid grid-cols-2 gap-6 mt-6">
+                  {tailAlbums.map((album) => (
+                    <AlbumCover key={album.title} album={album} onClick={() => setOpenAlbum(album)} landscape />
+                  ))}
+                </div>
+              )}
+            </div>
           </>
         )}
       </main>
