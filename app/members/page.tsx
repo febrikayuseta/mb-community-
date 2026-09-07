@@ -14,7 +14,6 @@ const members: {
     { name: "Cindy",    nickname: "cincla-mB",         photo: "/members/Cindy.jpeg" },
     { name: "Erica",    nickname: "mBrights1de-nLv",   photo: "/members/Erica.jpg" },
     { name: "Gabriella",nickname: "gbriella-mB",       photo: "/members/Gabriella.jpeg" },
-    { name: "Indah",    nickname: "VonzymB",           photo: "/members/Indah.jpeg" },
     { name: "Juwita",   nickname: "PlumeriaX5-mB",     photo: "/members/Juwita.jpg" },
     { name: "Lea",      nickname: "mBLeeyaa",          photo: "/members/Lea.png" },
     { name: "Melzi",    nickname: "nEMelzimB-BTR",     photo: "/members/Melzi.jpeg" },
