@@ -10,6 +10,7 @@ const members: {
   male: { name: string; nickname: string | null; photo: string | null }[];
 } = {
   female: [
+    { name: "Cienny",   nickname: "Cienny-mB",         photo: "/members/Cienny.jpg" },
     { name: "Cindy",    nickname: "cincla-mB",         photo: "/members/Cindy.jpeg" },
     { name: "Erica",    nickname: "mBrights1de-nLv",   photo: "/members/Erica.jpg" },
     { name: "Gabriella",nickname: "gbriella-mB",       photo: "/members/Gabriella.jpeg" },
@@ -33,16 +34,18 @@ const members: {
     { name: "Aris",     nickname: "FS-Boris-mB",       photo: "/members/Aris.jpeg" },
     { name: "Celvin",   nickname: "mBLAZE-X5",         photo: "/members/Celvin.jpg" },
     { name: "Dennis",   nickname: "KH-Luxie-mB",       photo: "/members/Dennis.jpeg" },
-    { name: "Dhani",    nickname: "imCreamB-X5",         photo: "/members/Dhani.jpeg" },
+    { name: "Dhani",    nickname: "imDANLEX5-mB",      photo: "/members/Dhani.jpeg" },
     { name: "Eric",     nickname: "mBRick-nLv",        photo: "/members/Eric.jpeg" },
     { name: "Indra",    nickname: "YunB-mB",           photo: "/members/Indra.webp" },
     { name: "Isal",     nickname: "RexXmB-REN",        photo: "/members/Isal.jpeg" },
-    { name: "Iskandar", nickname: "summer-mB",          photo: "/members/Iskandar.jpg" },
+    { name: "Iskandar", nickname: "summer-mB",         photo: "/members/Iskandar.jpg" },
+    { name: "Jet",      nickname: "Kienny-mB",         photo: "/members/Jet.jpeg" },
     { name: "Jordi",    nickname: "sinner-mB",         photo: "/members/Jordi.jpeg" },
     { name: "Khrisna",  nickname: "5sMerl-mB",         photo: "/members/Khrisna.png" },
     { name: "Marcel",   nickname: "wine-mB",           photo: "/members/Marcel.jpeg" },
     { name: "Mikel",    nickname: "mojiceRAR-mB",      photo: "/members/Mikel.jpeg" },
     { name: "Rahman",   nickname: "mBcyleX5",          photo: "/members/Rahman.jpeg" },
+    { name: "Rey",      nickname: "Jouwwereld-mB",     photo: "/members/Rey.webp" },
     { name: "Rizki",    nickname: "SchatzNexa-mB",     photo: "/members/Rizky-f.jpg" },
     { name: "Robby",    nickname: "douglas-mB",        photo: "/members/Robby.jpg" },
     { name: "San",      nickname: "Xann-mB",           photo: "/members/San.jpeg" },
