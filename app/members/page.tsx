@@ -21,7 +21,7 @@ const members: {
     { name: "Ririn",    nickname: "RinsF-mB",          photo: "/members/Ririn.jpg" },
     { name: "Silvi",    nickname: "maplewine-mB",      photo: "/members/Silvi.jpeg" },
     { name: "Tika",     nickname: "Chiizue-mB",        photo: "/members/Tika.jpeg" },
-    { name: "Veronika", nickname: "4FMuse-mB",         photo: "/members/Veronika.jpeg" },
+    { name: "Veronika", nickname: "TrvMuseIV-mB",         photo: "/members/Veronika.jpeg" },
     { name: "Vina",     nickname: "Puggymax-mB",       photo: "/members/Vina.jpeg" },
     { name: "Vio",      nickname: "Cien-mB",           photo: "/members/Vio.jpeg" },
   ],
