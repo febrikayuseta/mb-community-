@@ -26,7 +26,7 @@ const members: {
     { name: "Vio",      nickname: "Cien-mB",           photo: "/members/Vio.jpeg" },
   ],
   male: [
-    { name: "Ajot",     nickname: "lavmB1Fc / GRz-Kyllua-mB", photo: "/members/Ajot.jpg" },
+    { name: "Ajot",     nickname: "lavmB1Fc",                 photo: "/members/Ajot.jpg" },
     { name: "Alan",     nickname: "mBLanzi-yX",        photo: "/members/Alan.jpeg" },
     { name: "Alex",     nickname: "voree-mB",          photo: "/members/Alex.jpg" },
     { name: "Andre",    nickname: "impostorWHY-mB",    photo: "/members/Andre.jpg" },
