@@ -49,17 +49,15 @@ const albums = [
     ],
   },
   {
-    title: "COTM Selfie",
-    portrait: true,
-    cover: "/certificate/COTM-Selfie (0).jpg",
+    title: "Vevei Event",
+    portrait: false,
+    cover: "/certificate/veveiEvent 1.jpg",
     photos: [
-      "/certificate/COTM-Selfie (0).jpg",
-      "/certificate/COTM-Selfie (00).jpg",
-      "/certificate/COTM-Selfie (1).png",
-      "/certificate/COTM-Selfie (2).png",
-      "/certificate/COTM-Selfie (3).png",
-      "/certificate/COTM-Selfie (4).png",
-      "/certificate/COTM-Selfie (5).png",
+      "/certificate/veveiEvent 1.jpg",
+      "/certificate/veveiEvent 2.jpg",
+      "/certificate/veveiEvent 3.jpg",
+      "/certificate/veveiEvent 4.jpg",
+      "/certificate/veveiEvent 5.jpg",
     ],
   },
   {
@@ -77,6 +75,20 @@ const albums = [
       "/certificate/mB Petarunk (7).png",
       "/certificate/mB Petarunk (8).png",
       "/certificate/mB Petarunk (9).png",
+    ],
+  },
+  {
+    title: "COTM Selfie",
+    portrait: true,
+    cover: "/certificate/COTM-Selfie (0).jpg",
+    photos: [
+      "/certificate/COTM-Selfie (0).jpg",
+      "/certificate/COTM-Selfie (00).jpg",
+      "/certificate/COTM-Selfie (1).png",
+      "/certificate/COTM-Selfie (2).png",
+      "/certificate/COTM-Selfie (3).png",
+      "/certificate/COTM-Selfie (4).png",
+      "/certificate/COTM-Selfie (5).png",
     ],
   },
 ];
@@ -212,7 +224,7 @@ export default function CertificatePage() {
 
         <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-2xl md:max-w-4xl mx-auto">
           {albums.map((album) => (
-            <div key={album.title}>
+            <div key={album.title} className={album.title === "Vevei Event" ? "col-span-2 max-w-[50%] mx-auto w-full" : ""}>
               <AlbumCover album={album} onClick={() => setOpenAlbum(album)} />
             </div>
           ))}
